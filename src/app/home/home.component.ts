@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
+type lessonType = {
+  title: string
+}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  currentLesson = null;
   courseLessons = [
     { title: 'Hello Angular' },
     { title: 'Component Fundamentals' },
@@ -23,4 +28,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSelectLesson (lesson : lessonType): void {
+      this.currentLesson = lesson
+  }
 }
